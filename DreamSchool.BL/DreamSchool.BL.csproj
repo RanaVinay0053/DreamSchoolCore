@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DreamSchool.BO\DreamSchool.BO.csproj" />
+    <ProjectReference Include="..\DreamSchool.DA\DreamSchool.DA.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,7 @@
+D:\Pratics Projects\DreamSchool\DreamSchool.BO\bin\Debug\netstandard2.0\DreamSchool.BO.deps.json
+D:\Pratics Projects\DreamSchool\DreamSchool.BO\bin\Debug\netstandard2.0\DreamSchool.BO.dll
+D:\Pratics Projects\DreamSchool\DreamSchool.BO\bin\Debug\netstandard2.0\DreamSchool.BO.pdb
+D:\Pratics Projects\DreamSchool\DreamSchool.BO\obj\Debug\netstandard2.0\DreamSchool.BO.AssemblyInfoInputs.cache
+D:\Pratics Projects\DreamSchool\DreamSchool.BO\obj\Debug\netstandard2.0\DreamSchool.BO.AssemblyInfo.cs
+D:\Pratics Projects\DreamSchool\DreamSchool.BO\obj\Debug\netstandard2.0\DreamSchool.BO.dll
+D:\Pratics Projects\DreamSchool\DreamSchool.BO\obj\Debug\netstandard2.0\DreamSchool.BO.pdb

@@ -1,0 +1,13 @@
+D:\Pratics Projects\DreamSchool\DreamSchool.BL\bin\Debug\netstandard2.0\DreamSchool.BL.deps.json
+D:\Pratics Projects\DreamSchool\DreamSchool.BL\bin\Debug\netstandard2.0\DreamSchool.BL.dll
+D:\Pratics Projects\DreamSchool\DreamSchool.BL\bin\Debug\netstandard2.0\DreamSchool.BL.pdb
+D:\Pratics Projects\DreamSchool\DreamSchool.BL\obj\Debug\netstandard2.0\DreamSchool.BL.csprojAssemblyReference.cache
+D:\Pratics Projects\DreamSchool\DreamSchool.BL\obj\Debug\netstandard2.0\DreamSchool.BL.AssemblyInfoInputs.cache
+D:\Pratics Projects\DreamSchool\DreamSchool.BL\obj\Debug\netstandard2.0\DreamSchool.BL.AssemblyInfo.cs
+D:\Pratics Projects\DreamSchool\DreamSchool.BL\obj\Debug\netstandard2.0\DreamSchool.BL.dll
+D:\Pratics Projects\DreamSchool\DreamSchool.BL\obj\Debug\netstandard2.0\DreamSchool.BL.pdb
+D:\Pratics Projects\DreamSchool\DreamSchool.BL\bin\Debug\netstandard2.0\DreamSchool.BO.dll
+D:\Pratics Projects\DreamSchool\DreamSchool.BL\bin\Debug\netstandard2.0\DreamSchool.DA.dll
+D:\Pratics Projects\DreamSchool\DreamSchool.BL\bin\Debug\netstandard2.0\DreamSchool.BO.pdb
+D:\Pratics Projects\DreamSchool\DreamSchool.BL\bin\Debug\netstandard2.0\DreamSchool.DA.pdb
+D:\Pratics Projects\DreamSchool\DreamSchool.BL\obj\Debug\netstandard2.0\DreamSchool.BL.csproj.CopyComplete

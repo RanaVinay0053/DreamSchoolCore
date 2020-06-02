@@ -11,3 +11,14 @@ D:\Pratics Projects\DreamSchool\DreamSchool.BL\bin\Debug\netstandard2.0\DreamSch
 D:\Pratics Projects\DreamSchool\DreamSchool.BL\bin\Debug\netstandard2.0\DreamSchool.BO.pdb
 D:\Pratics Projects\DreamSchool\DreamSchool.BL\bin\Debug\netstandard2.0\DreamSchool.DA.pdb
 D:\Pratics Projects\DreamSchool\DreamSchool.BL\obj\Debug\netstandard2.0\DreamSchool.BL.csproj.CopyComplete
+G:\GitProjects\DreamSchoolCore\DreamSchoolCore\DreamSchool.BL\bin\Debug\netstandard2.0\DreamSchool.BL.deps.json
+G:\GitProjects\DreamSchoolCore\DreamSchoolCore\DreamSchool.BL\bin\Debug\netstandard2.0\DreamSchool.BL.dll
+G:\GitProjects\DreamSchoolCore\DreamSchoolCore\DreamSchool.BL\bin\Debug\netstandard2.0\DreamSchool.BL.pdb
+G:\GitProjects\DreamSchoolCore\DreamSchoolCore\DreamSchool.BL\bin\Debug\netstandard2.0\DreamSchool.BO.dll
+G:\GitProjects\DreamSchoolCore\DreamSchoolCore\DreamSchool.BL\bin\Debug\netstandard2.0\DreamSchool.DA.dll
+G:\GitProjects\DreamSchoolCore\DreamSchoolCore\DreamSchool.BL\bin\Debug\netstandard2.0\DreamSchool.BO.pdb
+G:\GitProjects\DreamSchoolCore\DreamSchoolCore\DreamSchool.BL\bin\Debug\netstandard2.0\DreamSchool.DA.pdb
+G:\GitProjects\DreamSchoolCore\DreamSchoolCore\DreamSchool.BL\obj\Debug\netstandard2.0\DreamSchool.BL.csprojResolveAssemblyReference.cache
+G:\GitProjects\DreamSchoolCore\DreamSchoolCore\DreamSchool.BL\obj\Debug\netstandard2.0\DreamSchool.BL.AssemblyInfo.cs
+G:\GitProjects\DreamSchoolCore\DreamSchoolCore\DreamSchool.BL\obj\Debug\netstandard2.0\DreamSchool.BL.dll
+G:\GitProjects\DreamSchoolCore\DreamSchoolCore\DreamSchool.BL\obj\Debug\netstandard2.0\DreamSchool.BL.pdb

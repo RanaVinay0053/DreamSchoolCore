@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using DreamSchool.Models;
+using DreamSchool.BO.DomainModels.MasterWebsite;
+using DreamSchool.BL.MasterWebsite;
 
 namespace DreamSchool.Controllers
 {
@@ -37,7 +39,9 @@ namespace DreamSchool.Controllers
 
         public ActionResult Events()
         {
-            return View();
+            List<EventsBO> _listEvents = new EventsBL().GetEvents();
+            //return View(_listClasses);
+            return View(_listEvents);
         }
 
         public ActionResult Notices()

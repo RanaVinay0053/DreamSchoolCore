@@ -1,0 +1,96 @@
+﻿@model DreamSchool.Models.EnquiryViewModel
+@{
+    ViewBag.Title = "Submit Enquiry";
+    Layout = "~/Views/Shared/_CommonMasterLayoutPage.cshtml";
+}
+
+<div class="content-wrapper" style="min-height: 525px;margin-left:0px">
+    <!-- Message -->
+    <!-- ./Message -->
+    <!-- BEGIN CHILD PAGE-->
+    <!-- Section header -->
+    <section class="content-header">
+        <h1>
+            Inquiry
+        </h1>
+    </section>
+    <!-- ./Section header -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-info">
+
+                    @using (Html.BeginForm("SaveEnquiry", "Token", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="box-body">
+                            @Html.HiddenFor(m => m.Id)                           
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label for="name">Student Name<span class="text-danger">*</span></label>
+                                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                                        <span class="fa fa-info form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.Name)
+                                        @*<span class="text-danger"></span>*@
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label>Father Name<span class="text-danger">*</span></label>
+                                        @Html.TextBoxFor(m => m.FatherName, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.FatherName)
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label>Email<span class="text-danger">*</span></label>
+                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                        <span class="fa  form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.Email)
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label>Phone<span class="text-danger">*</span></label>
+                                        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+                                        <span class="fa  form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.PhoneNumber)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row"> 
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label>Address</label>
+                                        @Html.TextAreaFor(m => m.Address, new { @class = "form-control" })
+                                        <span class="fa  form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.Address)
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label>Class Type<span class="text-danger">*</span></label>
+                                        @Html.DropDownListFor(m => m.ClassTypeId, new SelectList(Model.listClassTypes, "Id", "Name"), new { @class = "form-control" })
+                                        <span class="fa form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.ClassTypeId)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                <!-- /.box-body -->
+                        <div class="box-footer">
+                            <a href="~/CommonDashboard/Index" class="btn btn-default">Cancel</a>
+                            <button type="submit" class="btn btn-info pull-right"><i class="fa  fa-plus-circle "></i>  Submit </button>
+                        </div>
+                    }
+                    @*</form>*@
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+    <!-- END CHILD PAGE-->
+</div>
+

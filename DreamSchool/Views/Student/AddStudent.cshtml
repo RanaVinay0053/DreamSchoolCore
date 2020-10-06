@@ -1,0 +1,215 @@
+﻿@model DreamSchool.Models.StudentViewModel
+@{
+    ViewBag.Title = "Add Student";
+    Layout = "~/Views/Shared/_MasterLayoutPage.cshtml";
+}
+<link href="~/Content/Datepicker/datepicker.css" rel="stylesheet" />
+<div class="content-wrapper" style="min-height: 525px;">
+    <!-- Message -->
+    <!-- ./Message -->
+    <!-- BEGIN CHILD PAGE-->
+    <!-- Section header -->
+    <section class="content-header">
+        <h1>
+            Student
+        </h1>
+    </section>
+    <!-- ./Section header -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-info">
+
+                    @using (Html.BeginForm("SaveStudent", "Student", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="box-body">
+                            @Html.HiddenFor(m => m.Id)
+                            @Html.HiddenFor(m => m.ImagePath)
+                            @Html.HiddenFor(m => m.SignatureImagePath)
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group has-feedback">        
+                                        <img alt="User profile picture" class="profile-user-img img-responsive img-circle" src="@Model.srcImage">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label for="name">Student Name<span class="text-danger">*</span></label>
+                                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                                        <span class="fa fa-info form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.Name)
+                                        @*<span class="text-danger"></span>*@
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label>Father Name<span class="text-danger">*</span></label>
+                                        @Html.TextBoxFor(m => m.FatherName, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.FatherName)
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label>Registration Number<span class="text-danger">*</span></label>
+                                        @Html.TextBoxFor(m => m.RegistrationNumber, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.RegistrationNumber)
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label>Date Of Birth<span class="text-danger">*</span></label>
+                                        @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "form-control" })
+                                        <span class="fa  form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.DateOfBirth)
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label>Fees<span class="text-danger">*</span></label>
+                                        @Html.DropDownListFor(m => m.Gender, new SelectList(Model.listGender, "Id", "Name"), new { @class = "form-control" })
+                                        <span class="fa form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.Gender)
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label>Phone<span class="text-danger">*</span></label>
+                                        @Html.TextBoxFor(m => m.MobileNumber, new { @class = "form-control" })
+                                        <span class="fa  form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.MobileNumber)
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label>Email<span class="text-danger">*</span></label>
+                                        @Html.TextBoxFor(m => m.PrimaryEmail, new { @class = "form-control" })
+                                        <span class="fa  form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.PrimaryEmail)
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label>Address</label>
+                                        @Html.TextAreaFor(m => m.Address, new { @class = "form-control" })
+                                        <span class="fa  form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.Address)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label>Class<span class="text-danger">*</span></label>
+                                        @Html.DropDownListFor(m => m.ClassId, new SelectList(Model.listClasses, "Id", "Name"), new { @class = "form-control" })
+                                        <span class="fa form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.ClassId)
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label>Class Type<span class="text-danger">*</span></label>
+                                        @Html.DropDownListFor(m => m.ClassTypeId, new SelectList(Model.listClassTypes, "Id", "Name"), new { @class = "form-control" })
+                                        <span class="fa form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.ClassTypeId)
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label>Batch<span class="text-danger">*</span></label>
+                                        @Html.DropDownListFor(m => m.BatchYear, new SelectList(Model.BatchYears, "Value", "Text"), new { @class = "form-control" })
+                                        <span class="fa form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.BatchYear)
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label>Enrollment Date<span class="text-danger">*</span></label>
+                                        @Html.TextBoxFor(m => m.EnrollmentDate, new { @class = "form-control" })
+                                        <span class="fa  form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.EnrollmentDate)
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label>Programme Duration<span class="text-danger">*</span></label>
+                                        @Html.TextBoxFor(m => m.ProgrammeDuration, new { @class = "form-control" })
+                                        <span class="fa  form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.ProgrammeDuration)
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group ">
+                                        <label>Image</label>
+                                        @Html.TextBoxFor(m => m.Image, new { type = "file" })
+                                        @Html.ValidationMessageFor(m => m.Image)
+                                        @Html.ValidationMessageFor(m => m.ImagePath)
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group ">
+                                        <label>Signature Image</label>
+                                        @Html.TextBoxFor(m => m.SignatureImage, new { type = "file" })
+                                        @Html.ValidationMessageFor(m => m.SignatureImage)
+                                        @Html.ValidationMessageFor(m => m.SignatureImagePath)
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <img height="75" width="150" alt="User Image" class="user-image" src="@Model.srcSignatureImage">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                <!-- /.box-body -->
+                                <div class="box-footer">
+                                    <a href="/Student/Index" class="btn btn-default">Cancel</a>
+                                    <button type="submit" class="btn btn-info pull-right"><i class="fa  fa-plus-circle "></i>  Add/Update </button>
+                                </div>
+                    }
+                    @*</form>*@
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+    <!-- END CHILD PAGE-->
+</div>
+<script src="~/Scripts/Datepicker/datepicker.js"></script>
+<script src="~/Scripts/Datepicker/en.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#linkStudent').addClass('active');
+        $('#linkStudent').addClass('treeview');
+        $('#linkStudent').addClass('menu-open');
+        $('#linkAddStudent').addClass('active');
+        //https://www.jqueryscript.net/time-clock/Accessible-Data-Picker-Plugin-For-Bootstrap-ab-datepicker.html
+        $('#DateOfBirth').datepicker({
+            inputFormat: "dd/MM/yyyy",
+            outputFormat: "dd/MM/yyyy",
+
+        });
+        $('#EnrollmentDate').datepicker({
+            inputFormat: "dd/MM/yyyy",
+            outputFormat: "dd/MM/yyyy",
+
+        });
+        $('#DateOfBirth').datepicker({
+            inputFormat: "dd/MM/yyyy",
+            outputFormat: "dd/MM/yyyy",
+
+        });
+    })
+
+
+</script>

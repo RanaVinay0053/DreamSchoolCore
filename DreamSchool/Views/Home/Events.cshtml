@@ -1,7 +1,8 @@
-﻿
+﻿@model IEnumerable<DreamSchool.BO.DomainModels.MasterWebsite.EventsBO>
 @{
     ViewBag.Title = "Events";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 
 <!-- page title -->
@@ -23,24 +24,27 @@
 <section class="section">
     <div class="container">
         <div class="row">
-            <!-- event -->
-            <div class="col-lg-4 col-sm-6 mb-5">
-                <div class="card border-0 rounded-0 hover-shadow">
-                    <div class="card-img position-relative">
-                        <img class="card-img-top rounded-0" src="/images/events/event-1.jpg" alt="event thumb">
-                        <div class="card-date"><span>18</span><br>December</div>
-                    </div>
-                    <div class="card-body">
-                        <!-- location -->
-                        <p><i class="ti-location-pin text-primary mr-2"></i>Dhanmondi Lake, Dhaka</p>
-                        <a href="~/Home/ViewEvent">
-                            <h4 class="card-title">Firefly training in trauma-informed yoga</h4>
-                        </a>
+            @foreach (var item in Model)
+            {
+                <!-- event -->
+                <div class="col-lg-4 col-sm-6 mb-5">
+                    <div class="card border-0 rounded-0 hover-shadow">
+                        <div class="card-img position-relative">
+                            <img class="card-img-top rounded-0" src="@item.EventImage" alt="event thumb">
+                            <div class="card-date">@item.EventDate</div>
+                        </div>
+                        <div class="card-body">
+                            <!-- location -->
+                            <p><i class="ti-location-pin text-primary mr-2"></i>@item.EventVenue</p>
+                            <a href="~/Home/ViewEvent/@item.Id">
+                                <h4 class="card-title">@item.EventName</h4>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- event -->
-            <div class="col-lg-4 col-sm-6 mb-5">
+            }
+                <!-- event -->
+                @*<div class="col-lg-4 col-sm-6 mb-5">
                 <div class="card border-0 rounded-0 hover-shadow">
                     <div class="card-img position-relative">
                         <img class="card-img-top rounded-0" src="/images/events/event-2.jpg" alt="event thumb">
@@ -118,8 +122,8 @@
                         </a>
                     </div>
                 </div>
+            </div>*@
             </div>
-        </div>
     </div>
 </section>
 
@@ -130,5 +134,3 @@
 
 </script>
 <!-- /courses -->
-
-

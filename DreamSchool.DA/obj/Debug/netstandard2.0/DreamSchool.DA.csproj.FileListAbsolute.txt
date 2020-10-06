@@ -18,3 +18,17 @@ G:\GitProjects\DreamSchoolCore\DreamSchoolCore\DreamSchool.DA\obj\Debug\netstand
 G:\GitProjects\DreamSchoolCore\DreamSchoolCore\DreamSchool.DA\obj\Debug\netstandard2.0\DreamSchool.DA.AssemblyInfo.cs
 G:\GitProjects\DreamSchoolCore\DreamSchoolCore\DreamSchool.DA\obj\Debug\netstandard2.0\DreamSchool.DA.dll
 G:\GitProjects\DreamSchoolCore\DreamSchoolCore\DreamSchool.DA\obj\Debug\netstandard2.0\DreamSchool.DA.pdb
+G:\GitProjects\CoreDreamSchool\DreamSchool.DA\bin\Debug\netstandard2.0\DreamSchool.DA.deps.json
+G:\GitProjects\CoreDreamSchool\DreamSchool.DA\bin\Debug\netstandard2.0\DreamSchool.DA.dll
+G:\GitProjects\CoreDreamSchool\DreamSchool.DA\bin\Debug\netstandard2.0\DreamSchool.DA.pdb
+G:\GitProjects\CoreDreamSchool\DreamSchool.DA\bin\Debug\netstandard2.0\DreamSchool.BO.dll
+G:\GitProjects\CoreDreamSchool\DreamSchool.DA\bin\Debug\netstandard2.0\DreamSchool.BO.pdb
+G:\GitProjects\CoreDreamSchool\DreamSchool.DA\obj\Debug\netstandard2.0\DreamSchool.DA.csprojAssemblyReference.cache
+G:\GitProjects\CoreDreamSchool\DreamSchool.DA\obj\Debug\netstandard2.0\DreamSchool.DA.csproj.CoreCompileInputs.cache
+G:\GitProjects\CoreDreamSchool\DreamSchool.DA\obj\Debug\netstandard2.0\DreamSchool.DA.AssemblyInfoInputs.cache
+G:\GitProjects\CoreDreamSchool\DreamSchool.DA\obj\Debug\netstandard2.0\DreamSchool.DA.AssemblyInfo.cs
+G:\GitProjects\CoreDreamSchool\DreamSchool.DA\obj\Debug\netstandard2.0\DreamSchool.DA.csproj.CopyComplete
+G:\GitProjects\CoreDreamSchool\DreamSchool.DA\obj\Debug\netstandard2.0\DreamSchool.DA.dll
+G:\GitProjects\CoreDreamSchool\DreamSchool.DA\obj\Debug\netstandard2.0\DreamSchool.DA.pdb
+G:\GitProjects\CoreDreamSchool\DreamSchool.DA\bin\Debug\netstandard2.0\Microsoft.IdentityModel.Protocols.dll
+G:\GitProjects\CoreDreamSchool\DreamSchool.DA\bin\Debug\netstandard2.0\Microsoft.IdentityModel.Protocols.xml

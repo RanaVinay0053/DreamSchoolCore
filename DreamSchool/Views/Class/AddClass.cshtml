@@ -1,0 +1,96 @@
+﻿@model DreamSchool.Models.ClassViewModel
+@{
+    ViewBag.Title = "AddClass";
+    Layout = "~/Views/Shared/_MasterLayoutPage.cshtml";
+}
+
+<div class="content-wrapper" style="min-height: 525px;">
+    <!-- Message -->
+    <!-- ./Message -->
+    <!-- BEGIN CHILD PAGE-->
+    <!-- Section header -->
+    <section class="content-header">
+        <h1>
+            Class
+        </h1>        
+    </section>
+    <!-- ./Section header -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-info">
+
+                    @using (Html.BeginForm("SaveClass", "Class", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="box-body">
+                            @Html.HiddenFor(m => m.Id)
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label for="name">Class Name<span class="text-danger">*</span></label>
+                                        @Html.TextBoxFor(m => m.ClassName, new { @class = "form-control" })
+                                        <span class="fa fa-info form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.ClassName)
+                                        @*<span class="text-danger"></span>*@
+                                    </div>
+                                </div>  
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label for="numeric_value">Numerical Value<span class="text-danger">*</span></label>
+                                        @Html.TextBoxFor(m => m.NumericalValue, new { @class = "form-control" })
+                                        <span class="fa fa-sort-numeric-asc form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.NumericalValue)
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label for="numeric_value">Class Type<span class="text-danger">*</span></label>
+                                        @Html.DropDownListFor(m => m.ClassType, new SelectList(Model.listClassTypes, "Id", "Name"), new { @class = "form-control" })
+                                        <span class="fa form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.ClassType)
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label for="numeric_value">Fees<span class="text-danger">*</span></label>
+                                        @Html.TextBoxFor(m => m.Fees, new { @class = "form-control" })
+                                        <span class="fa fa-sort-numeric-asc form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.Fees)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer">
+                            <a href="/Class/Index" class="btn btn-default">Cancel</a>
+                            <button type="submit" class="btn btn-info pull-right"><i class="fa  fa-plus-circle "></i>  Add/Update </button>
+                        </div>
+                    }
+                    @*</form>*@
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+    <!-- END CHILD PAGE-->
+</div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#linkClass').addClass('active');
+        $('#linkClass').addClass('treeview');
+        $('#linkClass').addClass('menu-open');
+    })
+
+</script>
+
+
+
+
+
+
+
+

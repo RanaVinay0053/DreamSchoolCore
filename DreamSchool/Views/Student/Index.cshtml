@@ -1,0 +1,190 @@
+﻿@model IEnumerable<DreamSchool.BO.Student.StudentBO>
+@{
+    ViewBag.Title = "Student Listing";
+    Layout = "~/Views/Shared/_MasterLayoutPage.cshtml";
+}
+<link href="~/Content/DataTable/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/DataTable/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/DataTable/buttons.bootstrap.min.css" rel="stylesheet" />
+
+<div class="content-wrapper" style="min-height: 525px;">
+    <!-- Message -->
+    <!-- ./Message -->
+    <!-- BEGIN CHILD PAGE-->
+    <!-- Section header -->
+    <section class="content-header">
+        <h1>
+            Students
+            <a href="/Student/AddStudent" class="btn btn-default">Add New</a>
+        </h1>
+    </section>
+    <!-- ./Section header -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                    <thead style="background-color: #3c8dbc; color:white">
+                        <tr>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Father Name
+                            </th>
+                            <th>
+                                Registration Number
+                            </th>
+                            <th>
+                                Class
+                            </th>
+                            <th>
+                                ClassType
+                            </th>
+                            <th>
+                                Batch Year
+                            </th>
+                            <th>
+                                Programme Duration
+                            </th>
+                            <th>
+                                Date Of Birth
+                            </th>
+                            <th>
+                                Gender
+                            </th>
+                            <th>
+                                Phone
+                            </th>
+                            <th>
+                                Email
+                            </th>
+                            <th>
+                                Address
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FatherName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RegistrationNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Class)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ClassType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BatchYear)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ProgrammeDuration)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DateOfBirth)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Gender)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MobileNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PrimaryEmail)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Address)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "AddStudent", new { Id = item.Id }) |
+                                    @Html.ActionLink("Delete", "Delete", new { Id = item.Id })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+    <!-- END CHILD PAGE-->
+</div>
+
+<script src="~/Scripts/DataTable/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/DataTable/dataTables.bootstrap.min.js"></script>
+<script src="~/Scripts/DataTable/dataTables.buttons.min.js"></script>
+<script src="~/Scripts/DataTable/buttons.bootstrap.min.js"></script>
+<script src="~/Scripts/DataTable/jszip.min.js"></script>
+<script src="~/Scripts/DataTable/pdfmake.min.js"></script>
+<script src="~/Scripts/DataTable/vfs_fonts.js"></script>
+<script src="~/Scripts/DataTable/buttons.html5.min.js"></script>
+<script src="~/Scripts/DataTable/buttons.print.min.js"></script>
+<script src="~/Scripts/DataTable/buttons.colVis.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#linkStudent').addClass('active');
+        $('#linkStudent').addClass('treeview');
+        $('#linkStudent').addClass('menu-open');
+        $('#linkStudentListing').addClass('active');
+
+
+        var table = $('#dtBasicExample').DataTable({
+            lengthChange: true,
+            responsive: true,
+            lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+            scrollX: true,
+            buttons: [{
+                extend: 'copy',
+                exportOptions: {
+                    columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                }
+            }, {
+                extend: 'excel',
+                exportOptions: {
+                    columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                }
+            }, {
+                extend: 'pdf',
+                exportOptions: {
+                    columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                }
+            }, {
+                extend: 'print',
+                exportOptions: {
+                    columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                }
+            }],
+            columns: [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                { "orderable": false }
+            ]
+
+        });
+
+        table.buttons().container()
+            .appendTo('#dtBasicExample_wrapper .col-sm-6:eq(0)');
+    })
+
+</script>

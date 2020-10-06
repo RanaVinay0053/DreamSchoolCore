@@ -1,0 +1,150 @@
+﻿@model IEnumerable<DreamSchool.BO.Class.ClassBO>
+@{
+    ViewBag.Title = "Class Listing";
+    Layout = "~/Views/Shared/_MasterLayoutPage.cshtml";
+}
+
+<link href="~/Content/DataTable/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/DataTable/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/DataTable/buttons.bootstrap.min.css" rel="stylesheet" />
+
+<div class="content-wrapper" style="min-height: 525px;">
+    <!-- Message -->
+    <!-- ./Message -->
+    <!-- BEGIN CHILD PAGE-->
+    <!-- Section header -->
+    <section class="content-header">
+        <h1>
+            Classes
+            <a href="/Class/AddClass" class="btn btn-default">Add New</a>
+        </h1>
+    </section>
+    <!-- ./Section header -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                    <thead style="background-color: #3c8dbc; color:white">
+                        <tr>
+                            <th>
+                               Id
+                            </th>
+                            <th>
+                                Class Name
+                            </th>                            
+                            <th>
+                                Class Type
+                            </th>
+                            <th>
+                               Fees
+                            </th>
+                            <th>
+                                Created By
+                            </th>
+                            <th>
+                                Created Date
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Id)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ClassName)
+                                </td>                               
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ClassType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Fees)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "AddClass", new { Id = item.Id }) |
+                                    @Html.ActionLink("Delete", "Delete", new { Id = item.Id })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+    <!-- END CHILD PAGE-->
+</div>
+<script src="~/Scripts/DataTable/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/DataTable/dataTables.bootstrap.min.js"></script>
+<script src="~/Scripts/DataTable/dataTables.buttons.min.js"></script>
+<script src="~/Scripts/DataTable/buttons.bootstrap.min.js"></script>
+<script src="~/Scripts/DataTable/jszip.min.js"></script>
+<script src="~/Scripts/DataTable/pdfmake.min.js"></script>
+<script src="~/Scripts/DataTable/vfs_fonts.js"></script>
+<script src="~/Scripts/DataTable/buttons.html5.min.js"></script>
+<script src="~/Scripts/DataTable/buttons.print.min.js"></script>
+<script src="~/Scripts/DataTable/buttons.colVis.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#linkClass').addClass('active');
+        $('#linkClass').addClass('treeview');
+        $('#linkClass').addClass('menu-open');
+
+        var table = $('#dtBasicExample').DataTable({
+            lengthChange: true,
+            lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+            scrollX: true,
+            buttons: [{
+                extend: 'copy',
+                exportOptions: {
+                    columns: [0, 1, 2, 3, 4, 5]
+                }
+            }, {
+                extend: 'excel',
+                exportOptions: {
+                    columns: [0, 1, 2, 3, 4, 5]
+                }
+            }, {
+                extend: 'pdf',
+                exportOptions: {
+                    columns: [0, 1, 2, 3, 4, 5]
+                }
+            }, {
+                extend: 'print',
+                exportOptions: {
+                    columns: [0, 1, 2, 3, 4, 5]
+                }
+            }],
+            columns: [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                { "orderable": false }
+            ]
+        });
+
+        table.buttons().container()
+            .appendTo('#dtBasicExample_wrapper .col-sm-6:eq(0)');        
+    })
+
+</script>
+
+
+
+
+
+

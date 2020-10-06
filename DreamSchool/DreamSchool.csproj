@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="LoginPageFiles\**" />
+    <Content Remove="LoginPageFiles\**" />
+    <EmbeddedResource Remove="LoginPageFiles\**" />
+    <None Remove="LoginPageFiles\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Utility\Helper.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
   </ItemGroup>
@@ -12,6 +23,10 @@
   <ItemGroup>
     <ProjectReference Include="..\DreamSchool.BL\DreamSchool.BL.csproj" />
     <ProjectReference Include="..\DreamSchool.BO\DreamSchool.BO.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Utility\" />
   </ItemGroup>
 
 </Project>

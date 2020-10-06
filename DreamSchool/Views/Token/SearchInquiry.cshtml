@@ -1,0 +1,57 @@
+﻿@model DreamSchool.BO.Enquiry.SearchEnquiryBO
+
+@{
+    ViewBag.Title = "Search Inquiry";
+    Layout = "~/Views/Shared/_MasterLayoutPage.cshtml";
+}
+<link href="~/Content/DataTable/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/DataTable/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/DataTable/buttons.bootstrap.min.css" rel="stylesheet" />
+<div class="content-wrapper" style="min-height: 525px;">
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-info">
+
+                    @using (Html.BeginForm("SearchInquiry", "Token", FormMethod.Get, new { enctype = "multipart/form-data" }))
+                    {
+                <div class="box-body">
+
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="name">Serach Token Number<span class="text-danger">*</span></label>
+                                @Html.TextBoxFor(m => m.token, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.token)
+                                @*<span class="text-danger"></span>*@
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group " style="margin-top:20px">
+                                <button type="submit" class="btn btn-info pull-left"><i class="fa  fa-search "></i>  Search </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                }
+                    @*</form>*@
+                    
+                </div>
+            </div>
+        </div>
+        @Html.Partial("~/Views/Token/_InquiryListing.cshtml", Model.listEnquiry);
+    </section>
+</div>
+<script src="~/Scripts/DataTable/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/DataTable/dataTables.bootstrap.min.js"></script>
+<script src="~/Scripts/DataTable/dataTables.buttons.min.js"></script>
+<script src="~/Scripts/DataTable/buttons.bootstrap.min.js"></script>
+<script src="~/Scripts/DataTable/jszip.min.js"></script>
+<script src="~/Scripts/DataTable/pdfmake.min.js"></script>
+<script src="~/Scripts/DataTable/vfs_fonts.js"></script>
+<script src="~/Scripts/DataTable/buttons.html5.min.js"></script>
+<script src="~/Scripts/DataTable/buttons.print.min.js"></script>
+<script src="~/Scripts/DataTable/buttons.colVis.min.js"></script>
+
+

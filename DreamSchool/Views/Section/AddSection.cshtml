@@ -1,0 +1,106 @@
+﻿@model DreamSchool.Models.SectionViewModel
+
+@{
+    ViewBag.Title = "AddSection";
+    Layout = "~/Views/Shared/_MasterLayoutPage.cshtml";
+}
+
+<div class="content-wrapper" style="min-height: 525px;">
+    <!-- Message -->
+    <!-- ./Message -->
+    <!-- BEGIN CHILD PAGE-->
+    <!-- Section header -->
+    <section class="content-header">
+        <h1>
+            Section
+        </h1>
+    </section>
+    <!-- ./Section header -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-info">
+
+                    @using (Html.BeginForm("SaveSection", "Section", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="box-body">
+                            @Html.HiddenFor(m => m.Id)
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label for="name">Section Name<span class="text-danger">*</span></label>
+                                        @Html.TextBoxFor(m => m.SectionName, new { @class = "form-control" })
+                                        <span class="fa fa-info form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.SectionName)
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label for="numeric_value">Description<span class="text-danger">*</span></label>
+                                        @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })
+                                        <span class="fa form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.Description)
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label for="numeric_value">Class<span class="text-danger">*</span></label>
+                                        @Html.DropDownListFor(m => m.Class, new SelectList(Model.listClasses, "Id", "ClassName"), new { @class = "form-control" })
+                                        <span class="fa form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.Class)
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label for="numeric_value">Class Teacher</label>
+                                        @Html.DropDownListFor(m => m.ClassTeacher, new SelectList(Model.listClasses, "Id", "ClassName"), new { @class = "form-control" })
+                                        <span class="fa form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.ClassTeacher)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label for="name">Room Name</label>
+                                        @Html.TextBoxFor(m => m.RoomName, new { @class = "form-control" })
+                                        <span class="fa form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.RoomName)
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label for="numeric_value">Batch Start Year<span class="text-danger">*</span></label>
+                                        @Html.DropDownListFor(m => m.BatchStartYear, new SelectList(Model.BatchYears, "Text", "Value"), new { @class = "form-control" })
+                                        <span class="fa form-control-feedback"></span>
+                                        @Html.ValidationMessageFor(m => m.BatchStartYear)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                            <div class="box-footer">
+                                <a href="/Section/Index" class="btn btn-default">Cancel</a>
+                                <button type="submit" class="btn btn-info pull-right"><i class="fa  fa-plus-circle "></i>  Add/Update </button>
+                            </div>
+                    }
+                    @*</form>*@
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+    <!-- END CHILD PAGE-->
+</div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#linkSection').addClass('active');
+        $('#linkSection').addClass('treeview');
+        $('#linkSection').addClass('menu-open');
+    })
+
+</script>

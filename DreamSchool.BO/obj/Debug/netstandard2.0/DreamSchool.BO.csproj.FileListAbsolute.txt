@@ -12,3 +12,12 @@ G:\GitProjects\DreamSchoolCore\DreamSchoolCore\DreamSchool.BO\obj\Debug\netstand
 G:\GitProjects\DreamSchoolCore\DreamSchoolCore\DreamSchool.BO\obj\Debug\netstandard2.0\DreamSchool.BO.AssemblyInfo.cs
 G:\GitProjects\DreamSchoolCore\DreamSchoolCore\DreamSchool.BO\obj\Debug\netstandard2.0\DreamSchool.BO.dll
 G:\GitProjects\DreamSchoolCore\DreamSchoolCore\DreamSchool.BO\obj\Debug\netstandard2.0\DreamSchool.BO.pdb
+G:\GitProjects\CoreDreamSchool\DreamSchool.BO\bin\Debug\netstandard2.0\DreamSchool.BO.deps.json
+G:\GitProjects\CoreDreamSchool\DreamSchool.BO\bin\Debug\netstandard2.0\DreamSchool.BO.dll
+G:\GitProjects\CoreDreamSchool\DreamSchool.BO\bin\Debug\netstandard2.0\DreamSchool.BO.pdb
+G:\GitProjects\CoreDreamSchool\DreamSchool.BO\obj\Debug\netstandard2.0\DreamSchool.BO.csproj.CoreCompileInputs.cache
+G:\GitProjects\CoreDreamSchool\DreamSchool.BO\obj\Debug\netstandard2.0\DreamSchool.BO.AssemblyInfoInputs.cache
+G:\GitProjects\CoreDreamSchool\DreamSchool.BO\obj\Debug\netstandard2.0\DreamSchool.BO.AssemblyInfo.cs
+G:\GitProjects\CoreDreamSchool\DreamSchool.BO\obj\Debug\netstandard2.0\DreamSchool.BO.dll
+G:\GitProjects\CoreDreamSchool\DreamSchool.BO\obj\Debug\netstandard2.0\DreamSchool.BO.pdb
+G:\GitProjects\CoreDreamSchool\DreamSchool.BO\obj\Debug\netstandard2.0\DreamSchool.BO.csprojAssemblyReference.cache

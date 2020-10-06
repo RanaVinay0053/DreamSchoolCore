@@ -1,0 +1,124 @@
+﻿@model IEnumerable<DreamSchool.BO.Enquiry.EnquiryBO>
+
+
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                    <thead style="background-color: #3c8dbc; color:white">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.FatherName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TokenNumber)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Address)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Email)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.PhoneNumber)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ClassType)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CreatedDate)
+                            </th>
+                        </tr>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FatherName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TokenNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Address)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ClassType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#linkStudent').addClass('active');
+        $('#linkStudent').addClass('treeview');
+        $('#linkStudent').addClass('menu-open');
+        $('#linkTokenListing').addClass('active');
+        
+        var table = $('#dtBasicExample').DataTable({
+            lengthChange: true,
+            lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+            scrollX: true,
+            buttons: [{
+                extend: 'copy',
+                exportOptions: {
+                    columns: [0, 1, 2, 3, 4, 5, 6,7]
+                }
+            }, {
+                extend: 'excel',
+                exportOptions: {
+                    columns: [0, 1, 2, 3, 4, 5, 6, 7]
+                }
+            }, {
+                extend: 'pdf',
+                exportOptions: {
+                    columns: [0, 1, 2, 3, 4, 5, 6, 7]
+                }
+            }, {
+                extend: 'print',
+                exportOptions: {
+                    columns: [0, 1, 2, 3, 4, 5, 6, 7]
+                }
+            }]
+        });
+
+        table.buttons().container()
+            .appendTo('#dtBasicExample_wrapper .col-sm-6:eq(0)');
+        //$('#dtBasicExample').DataTable({
+        //    //"pagingType": "full_numbers",
+        //    //"lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+        //    dom: 'Bfrtip',
+        //    buttons: [
+        //        'copyHtml5',
+        //        'excelHtml5',
+        //        'csvHtml5',
+        //        'pdfHtml5'
+        //    ]
+        //});
+        //$('.dataTables_length').addClass('bs-select');
+
+    })
+
+</script>

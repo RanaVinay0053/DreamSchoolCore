@@ -1,14 +1,11 @@
 ﻿using DreamSchool.BL.Student;
-using DreamSchool.BO.Master;
 using DreamSchool.BO.Student;
 using DreamSchool.Models;
-using System;
-using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace DreamSchool.Controllers
 {

@@ -46,7 +46,10 @@ namespace DreamSchool.Controllers
 
         public ActionResult Notices()
         {
-            return View();
+            List<NoticeBO> _listNotices = new NoticeBL().GetNotices();
+
+            //return View(_listNotices);
+            return View(_listNotices);
         }
 
         public ActionResult Research()

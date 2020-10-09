@@ -18,11 +18,15 @@
     <!-- Google Font -->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-    
+
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>  
-    
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+
+    @{
+        var x = User.Identity as ClaimsIdentity;
+    }
 
 
     <div class="wrapper">
@@ -79,35 +83,43 @@
                                 <li class="footer"><a href="#">See All Messages</a></li>
                             </ul>
                         </li>
-                        <!-- /.messages-menu -->                       
+                        <!-- /.messages-menu -->
                         <li class="dropdown user user-menu">
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <!-- The user image in the navbar-->
                                 <img src="~/Images/avatar.jpg" class="user-image" alt="User Image">
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                                <span class="hidden-xs">Vinay Rana</span>
+                                @if (x.Claims.Count() > 0)
+                                {<span class="hidden-xs">@x.FindFirst("name").Value</span>}
+
+
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
                                     <img src="~/Images/avatar.jpg" class="img-circle" alt="User Image">
                                     <p>
-                                        Vinay Rana - Admin
+                                        @if (x.Claims.Count() > 0)
+                                        {<span>
+                                                @x.FindFirst("name").Value
+                                                @x.FindFirst("rolename").Value
+                                            </span>
+                                        }
                                         <small>Member since Nov. 2014</small>
                                     </p>
-                                </li>                                
+                                </li>
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
                                         <a href="#" class="btn btn-default btn-flat">Profile</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="/Login/Logout" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="/Home/Logout" class="btn btn-default btn-flat">Sign out</a>
                                     </div>
                                 </li>
                             </ul>
-                        </li>                       
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -214,7 +226,7 @@
                             <i class="fa fa-power-off"></i> <span>Logout</span>
                         </a>
                     </li>
-                   
+
                 </ul>
             </section>
             <!-- /.sidebar -->
@@ -231,9 +243,9 @@
             <!-- Default to the left -->
             <strong>Copyright &copy; 2019 <a href="#">Rana Creations</a>.</strong> All rights reserved.
         </footer>
-       
+
     </div>
-    
+
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
     <script src="~/Content/bootstrap/dist/js/bootstrap.min.js"></script>

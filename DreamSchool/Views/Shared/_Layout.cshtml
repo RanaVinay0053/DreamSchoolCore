@@ -115,38 +115,38 @@
     <!-- /header -->
     <!-- Modal -->
     @*<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content rounded-0 border-0 p-4">
-                <div class="modal-header border-0">
-                    <h3>Register</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="login">
-                        <form action="#" class="row">
-                            <div class="col-12">
-                                <input type="text" class="form-control mb-3" id="signupPhone" name="signupPhone" placeholder="Phone">
-                            </div>
-                            <div class="col-12">
-                                <input type="text" class="form-control mb-3" id="signupName" name="signupName" placeholder="Name">
-                            </div>
-                            <div class="col-12">
-                                <input type="email" class="form-control mb-3" id="signupEmail" name="signupEmail" placeholder="Email">
-                            </div>
-                            <div class="col-12">
-                                <input type="password" class="form-control mb-3" id="signupPassword" name="signupPassword" placeholder="Password">
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary">SIGN UP</button>
-                            </div>
-                        </form>
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content rounded-0 border-0 p-4">
+                    <div class="modal-header border-0">
+                        <h3>Register</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="login">
+                            <form action="#" class="row">
+                                <div class="col-12">
+                                    <input type="text" class="form-control mb-3" id="signupPhone" name="signupPhone" placeholder="Phone">
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" class="form-control mb-3" id="signupName" name="signupName" placeholder="Name">
+                                </div>
+                                <div class="col-12">
+                                    <input type="email" class="form-control mb-3" id="signupEmail" name="signupEmail" placeholder="Email">
+                                </div>
+                                <div class="col-12">
+                                    <input type="password" class="form-control mb-3" id="signupPassword" name="signupPassword" placeholder="Password">
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">SIGN UP</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>*@
+        </div>*@
     <!-- Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -158,20 +158,23 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="~/DashBoard/Index" class="row">
-                        @*<div class="col-12">
+
+                    <div class="alert alert-danger"></div>
+
+
+                    @*<div class="col-12">
                             <input type="text" class="form-control mb-3" id="loginPhone" name="loginPhone" placeholder="Phone">
                         </div>*@
-                        <div class="col-12">
-                            <input type="text" class="form-control mb-3" id="loginUserName" name="loginUserName" placeholder="UserName">
-                        </div>
-                        <div class="col-12">
-                            <input type="password" class="form-control mb-3" id="loginPassword" name="loginPassword" placeholder="Password">
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary">LOGIN</button>
-                        </div>
-                    </form>
+                    <div class="col-12">
+                        <input type="text" class="form-control mb-3" id="loginUserName" name="loginUserName" placeholder="UserName" required>
+                    </div>
+                    <div class="col-12">
+                        <input type="password" class="form-control mb-3" id="loginPassword" name="loginPassword" placeholder="Password" required>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" onclick="login()" class="btn btn-primary">LOGIN</button>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -268,5 +271,57 @@
     <script src="~/plugins/google-map/gmap.js"></script>
     <!-- Main Script -->
     <script src="~/Scripts/script.js"></script>
+    <script>
+
+        function login() {
+            var goodToGo = true;
+            if ($('#loginUserName').val() == null || $('#loginUserName').val() == "") {
+                goodToGo = false;
+            }
+            if ($('#loginPassword').val() == null || $('#loginPassword').val() == "") {
+                goodToGo = false;
+            }
+
+            if (goodToGo) {
+
+                $.ajax({
+                    url: "@Url.Action("Login", "DashBoard")",
+                    type: "POST",
+                    data: { username: $("#loginUserName").val(), password: $("#loginPassword").val() },
+                    success: function (result) {
+
+                        if (result.response == 1) {
+                            window.location.href = "@Url.Action("Index", "DashBoard")";
+                        }
+                        else {
+
+                            $(".alert").html(result.data)
+                            $(".alert").show();
+                            setTimeout(function () { hideTarget(); }, 5000);
+                        }
+                    }
+                });
+            }
+            else {
+                $(".alert").html("Please enter your login credentials");
+                $(".alert").show();
+                setTimeout(function () { hideTarget(); }, 5000);
+
+
+            }
+
+        }
+
+        function hideTarget() {
+                                    $(".alert").hide();
+        };
+    </script>
+    <style>
+
+        .alert {
+            display: none;
+        }
+    </style>
 </body>
 </html>
+

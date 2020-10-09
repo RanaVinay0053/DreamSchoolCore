@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Pratics Projects\\DreamSchool\\DreamSchool.BO\\DreamSchool.BO.csproj": {}
+    "D:\\Pratics Projects\\SchoolDream\\DreamSchoolCore\\DreamSchool.BO\\DreamSchool.BO.csproj": {}
   },
   "projects": {
-    "D:\\Pratics Projects\\DreamSchool\\DreamSchool.BO\\DreamSchool.BO.csproj": {
+    "D:\\Pratics Projects\\SchoolDream\\DreamSchoolCore\\DreamSchool.BO\\DreamSchool.BO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Pratics Projects\\DreamSchool\\DreamSchool.BO\\DreamSchool.BO.csproj",
+        "projectUniqueName": "D:\\Pratics Projects\\SchoolDream\\DreamSchoolCore\\DreamSchool.BO\\DreamSchool.BO.csproj",
         "projectName": "DreamSchool.BO",
-        "projectPath": "D:\\Pratics Projects\\DreamSchool\\DreamSchool.BO\\DreamSchool.BO.csproj",
+        "projectPath": "D:\\Pratics Projects\\SchoolDream\\DreamSchoolCore\\DreamSchool.BO\\DreamSchool.BO.csproj",
         "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\Pratics Projects\\DreamSchool\\DreamSchool.BO\\obj\\",
+        "outputPath": "D:\\Pratics Projects\\SchoolDream\\DreamSchoolCore\\DreamSchool.BO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,6 +43,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[4.7.0, )"
             }
           },
           "imports": [

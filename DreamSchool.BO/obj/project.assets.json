@@ -279,23 +279,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ajay Pratap\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\ACER\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\GitProjects\\CoreDreamSchool\\DreamSchool.BO\\DreamSchool.BO.csproj",
+      "projectUniqueName": "D:\\Pratics Projects\\SchoolDream\\DreamSchoolCore\\DreamSchool.BO\\DreamSchool.BO.csproj",
       "projectName": "DreamSchool.BO",
-      "projectPath": "G:\\GitProjects\\CoreDreamSchool\\DreamSchool.BO\\DreamSchool.BO.csproj",
-      "packagesPath": "C:\\Users\\Ajay Pratap\\.nuget\\packages\\",
-      "outputPath": "G:\\GitProjects\\CoreDreamSchool\\DreamSchool.BO\\obj\\",
+      "projectPath": "D:\\Pratics Projects\\SchoolDream\\DreamSchoolCore\\DreamSchool.BO\\DreamSchool.BO.csproj",
+      "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+      "outputPath": "D:\\Pratics Projects\\SchoolDream\\DreamSchoolCore\\DreamSchool.BO\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Ajay Pratap\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -331,10 +327,16 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
